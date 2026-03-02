@@ -65,6 +65,10 @@
     --transition-slow: 350ms ease;
 }
 
+.barklyEastHighSchoolLogo{
+  border-radius: 10px;
+}
+
 /* Reset & Base */
 *, *::before, *::after {
     box-sizing: border-box;
