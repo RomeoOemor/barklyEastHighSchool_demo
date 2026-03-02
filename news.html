@@ -1,0 +1,330 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="news.html" class="nav-link active">News</a></li>
+                <li><a href="sports.html" class="nav-link">Sports</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="news-page-title">News & Events</h1>
+            <p>Stay updated with the latest happenings at our school</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest News</h2>
+                <p class="section-subtitle">Recent updates and announcements</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- News Item 1 -->
+                <article class="card" data-testid="news-item-1" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--green-primary), var(--green-dark)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-medal" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Academics</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">Matric Class of 2025 Achieves Outstanding 96% Pass Rate</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">We are proud to announce exceptional results from our graduating class, with 15 students achieving distinctions across various subjects.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>December 15, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="card" data-testid="news-item-2" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-futbol" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Sports</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">Rugby Team Wins Provincial Championship</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Our U18 rugby team brought home the trophy after a thrilling victory in the provincial finals, showcasing exceptional teamwork and skill.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>December 10, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="card" data-testid="news-item-3" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--red-primary), var(--red-dark)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-calendar-check" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Admissions</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">2026 Academic Year Registration Now Open</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Applications for the upcoming academic year are now being accepted. Early registration discounts available until January 31st.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>December 5, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 4 -->
+                <article class="card" data-testid="news-item-4" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--green-dark), var(--green-primary)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-music" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Arts & Culture</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">School Choir Performs at National Arts Festival</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Our award-winning choir represented the Eastern Cape at the National Schools Arts Festival, receiving standing ovations for their performances.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>November 28, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 5 -->
+                <article class="card" data-testid="news-item-5" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-laptop-code" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Technology</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">New Computer Lab Opens for Students</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Thanks to a generous donation, our school now has a state-of-the-art computer laboratory with 40 new computers for student use.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>November 20, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 6 -->
+                <article class="card" data-testid="news-item-6" style="padding: 0; overflow: hidden;">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--red-dark), var(--red-primary)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-handshake" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="font-size: 0.75rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Community</span>
+                        <h3 style="font-size: 1.15rem; margin: 0.5rem 0; line-height: 1.4;">Community Service Day Success</h3>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Over 200 students participated in our annual community service day, volunteering at local organizations and making a positive impact.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>November 15, 2025</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Mark your calendar for these important dates</p>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="card" data-testid="event-1" style="display: flex; gap: 2rem; margin-bottom: 1.5rem; align-items: center;">
+                    <div style="min-width: 100px; text-align: center; padding: 1rem; background: var(--green-primary); border-radius: var(--radius-md); color: white;">
+                        <div style="font-size: 2rem; font-weight: 700; line-height: 1;">15</div>
+                        <div style="font-size: 0.875rem; text-transform: uppercase;">Jan 2026</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin-bottom: 0.5rem;">School Reopens for 2026 Academic Year</h3>
+                        <p style="color: var(--gray-600); font-size: 0.9rem; margin-bottom: 0.5rem;">All students are expected to report for the new academic year. Grade 8 orientation begins at 8:00 AM.</p>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>School Campus</span>
+                    </div>
+                </div>
+
+                <div class="card" data-testid="event-2" style="display: flex; gap: 2rem; margin-bottom: 1.5rem; align-items: center;">
+                    <div style="min-width: 100px; text-align: center; padding: 1rem; background: var(--gold-primary); border-radius: var(--radius-md); color: white;">
+                        <div style="font-size: 2rem; font-weight: 700; line-height: 1;">20</div>
+                        <div style="font-size: 0.875rem; text-transform: uppercase;">Jan 2026</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin-bottom: 0.5rem;">Parent Orientation Meeting</h3>
+                        <p style="color: var(--gray-600); font-size: 0.9rem; margin-bottom: 0.5rem;">Parents of new students are invited to meet teachers and learn about school policies and expectations.</p>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>School Hall | 6:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="card" data-testid="event-3" style="display: flex; gap: 2rem; margin-bottom: 1.5rem; align-items: center;">
+                    <div style="min-width: 100px; text-align: center; padding: 1rem; background: var(--red-primary); border-radius: var(--radius-md); color: white;">
+                        <div style="font-size: 2rem; font-weight: 700; line-height: 1;">28</div>
+                        <div style="font-size: 0.875rem; text-transform: uppercase;">Jan 2026</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin-bottom: 0.5rem;">Inter-School Sports Tournament</h3>
+                        <p style="color: var(--gray-600); font-size: 0.9rem; margin-bottom: 0.5rem;">Annual sports tournament featuring athletics, rugby, and netball competitions against neighboring schools.</p>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>Sports Fields | 9:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="card" data-testid="event-4" style="display: flex; gap: 2rem; align-items: center;">
+                    <div style="min-width: 100px; text-align: center; padding: 1rem; background: var(--green-dark); border-radius: var(--radius-md); color: white;">
+                        <div style="font-size: 2rem; font-weight: 700; line-height: 1;">14</div>
+                        <div style="font-size: 0.875rem; text-transform: uppercase;">Feb 2026</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin-bottom: 0.5rem;">Valentine's Day Talent Show</h3>
+                        <p style="color: var(--gray-600); font-size: 0.9rem; margin-bottom: 0.5rem;">Students showcase their talents in music, dance, poetry, and drama. Everyone is welcome to attend!</p>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>School Hall | 2:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Stay Connected</h2>
+                <p>Subscribe to our newsletter for the latest news and updates.</p>
+                <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem;" data-testid="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="form-input" style="flex: 1; border-radius: var(--radius-full);" required data-testid="newsletter-email">
+                    <button type="submit" class="btn btn-primary" data-testid="newsletter-submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barkly East High School. All rights reserved.</p>
+                <p>Powered by: &copy; <a href="https://romeooemor.github.io/Edu-Tech/">Edu-Tech</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Newsletter form handler
+        document.querySelector('[data-testid=\"newsletter-form\"]').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Thank you for subscribing to our newsletter!', 'success');
+            this.reset();
+        });
+    </script>
+    <style>
+        @media (max-width: 968px) {
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 576px) {
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+            [style*="display: flex"][style*="gap: 2rem"] { flex-direction: column !important; gap: 1rem !important; }
+            [style*="min-width: 100px"] { min-width: auto !important; }
+        }
+    </style>
+</body>
+</html>

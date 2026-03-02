@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Barkly East High School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .portal-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .portal-sidebar {
+            width: 260px;
+            background: var(--gray-900);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 100;
+            transition: transform var(--transition-base);
+        }
+        
+        .portal-sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-800);
+            margin-bottom: 1.5rem;
+        }
+        
+        .portal-sidebar-brand .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .portal-sidebar-brand span {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .portal-nav {
+            flex: 1;
+        }
+        
+        .portal-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            color: var(--gray-400);
+            margin-bottom: 0.25rem;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .portal-nav-item:hover,
+        .portal-nav-item.active {
+            background: var(--gray-800);
+            color: white;
+        }
+        
+        .portal-nav-item.active {
+            background: var(--green-primary);
+        }
+        
+        .portal-nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .portal-nav-section {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            padding: 1rem 1rem 0.5rem;
+        }
+        
+        .portal-logout {
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-800);
+            margin-top: auto;
+        }
+        
+        .portal-main {
+            flex: 1;
+            margin-left: 260px;
+            background: var(--gray-100);
+            min-height: 100vh;
+        }
+        
+        .portal-header {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .portal-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .portal-user {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .portal-user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--green-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .portal-content {
+            padding: 2rem;
+        }
+        
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .portal-stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .portal-stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portal-stat h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .portal-stat p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+        
+        .portal-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        
+        .portal-card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .portal-card-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .portal-card-body {
+            padding: 1.5rem;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            padding: 0.5rem;
+            font-size: 1.25rem;
+            color: var(--gray-700);
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+        
+        /* Section visibility */
+        .portal-section {
+            display: none;
+        }
+        
+        .portal-section.active {
+            display: block;
+        }
+        
+        /* Marks table */
+        .marks-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .marks-table th,
+        .marks-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .marks-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-700);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .marks-table tr:hover {
+            background: var(--gray-50);
+        }
+        
+        .mark-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .mark-badge.pass {
+            background: rgba(27, 94, 32, 0.1);
+            color: var(--green-primary);
+        }
+        
+        .mark-badge.fail {
+            background: rgba(198, 40, 40, 0.1);
+            color: var(--red-primary);
+        }
+        
+        .mark-badge.distinction {
+            background: rgba(212, 160, 18, 0.1);
+            color: var(--gold-dark);
+        }
+        
+        /* Homework cards */
+        .homework-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--green-primary);
+        }
+        
+        .homework-card.urgent {
+            border-left-color: var(--red-primary);
+        }
+        
+        .homework-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .homework-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .homework-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        
+        .homework-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-500);
+        }
+        
+        /* Timetable */
+        .timetable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .timetable th,
+        .timetable td {
+            padding: 0.75rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            font-size: 0.85rem;
+        }
+        
+        .timetable th {
+            background: var(--green-primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .timetable td {
+            background: white;
+        }
+        
+        .timetable .time-slot {
+            background: var(--gray-100);
+            font-weight: 500;
+            color: var(--gray-700);
+            width: 80px;
+        }
+        
+        .timetable .subject {
+            font-weight: 500;
+        }
+        
+        .timetable .teacher {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        .timetable .break-row td {
+            background: var(--gold-light);
+            font-weight: 500;
+            color: var(--gold-dark);
+        }
+        
+        /* Sick leave form */
+        .sick-leave-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .sick-leave-card .status {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .sick-leave-card .status.pending {
+            background: rgba(212, 160, 18, 0.15);
+            color: var(--gold-dark);
+        }
+        
+        .sick-leave-card .status.approved {
+            background: rgba(27, 94, 32, 0.15);
+            color: var(--green-primary);
+        }
+        
+        .sick-leave-card .status.rejected {
+            background: rgba(198, 40, 40, 0.15);
+            color: var(--red-primary);
+        }
+        
+        /* Events */
+        .event-card {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.25rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+        
+        .event-date {
+            text-align: center;
+            min-width: 60px;
+            padding: 0.75rem;
+            background: var(--green-primary);
+            border-radius: var(--radius-md);
+            color: white;
+        }
+        
+        .event-date .day {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .event-date .month {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        
+        .event-info h4 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .event-info p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-info .event-meta {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-fast);
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: var(--radius-lg);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform var(--transition-fast);
+        }
+        
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.1rem;
+        }
+        
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            color: var(--gray-500);
+            transition: all var(--transition-fast);
+        }
+        
+        .modal-close:hover {
+            background: var(--gray-100);
+            color: var(--gray-800);
+        }
+        
+        .modal-body {
+            padding: 1.5rem;
+        }
+        
+        /* Profile edit */
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .profile-avatar-large {
+            width: 120px;
+            height: 120px;
+            background: var(--green-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .profile-details {
+            flex: 1;
+        }
+        
+        @media (max-width: 968px) {
+            .portal-sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .portal-sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-overlay.active {
+                display: block;
+            }
+            
+            .portal-main {
+                margin-left: 0;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .portal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portal-content {
+                padding: 1rem;
+            }
+            
+            .timetable {
+                font-size: 0.75rem;
+            }
+            
+            .timetable th,
+            .timetable td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal-layout">
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <!-- Sidebar -->
+        <aside class="portal-sidebar" id="portalSidebar">
+            <div class="portal-sidebar-brand">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span>Student Portal</span>
+            </div>
+            
+            <nav class="portal-nav">
+                <a class="portal-nav-item active" data-section="dashboard" data-testid="nav-dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <div class="portal-nav-section">Academic</div>
+                <a class="portal-nav-item" data-section="marks" data-testid="nav-marks">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>My Marks</span>
+                </a>
+                <a class="portal-nav-item" data-section="homework" data-testid="nav-homework">
+                    <i class="fas fa-book"></i>
+                    <span>Homework</span>
+                </a>
+                <a class="portal-nav-item" data-section="timetable" data-testid="nav-timetable">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Timetable</span>
+                </a>
+                
+                <div class="portal-nav-section">Services</div>
+                <a class="portal-nav-item" data-section="sick-leave" data-testid="nav-sick-leave">
+                    <i class="fas fa-medkit"></i>
+                    <span>Sick Leave</span>
+                </a>
+                <a class="portal-nav-item" data-section="events" data-testid="nav-events">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Events</span>
+                </a>
+                
+                <div class="portal-nav-section">Account</div>
+                <a class="portal-nav-item" data-section="profile" data-testid="nav-profile">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a class="portal-nav-item" id="openChatbot" data-testid="nav-assistant">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+            
+            <div class="portal-logout">
+                <a href="login.html" class="portal-nav-item" id="logoutBtn" data-testid="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="portal-main">
+            <header class="portal-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="pageTitle" data-testid="portal-title">Dashboard</h1>
+                </div>
+                <div class="portal-user" style="cursor: pointer;" onclick="showSection('profile')">
+                    <div>
+                        <div style="font-weight: 500;" id="studentName" data-testid="student-name">Student</div>
+                        <div style="font-size: 0.8rem; color: var(--gray-500);" id="studentGrade" data-testid="student-grade">Grade</div>
+                    </div>
+                    <div class="portal-user-avatar" id="studentAvatar" data-testid="student-avatar">S</div>
+                </div>
+            </header>
+            
+            <div class="portal-content">
+                <!-- Dashboard Section -->
+                <div class="portal-section active" id="section-dashboard">
+                    <!-- Welcome Message -->
+                    <div class="portal-card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--green-primary), var(--green-dark)); color: white;">
+                        <div class="portal-card-body">
+                            <h2 style="color: white; margin-bottom: 0.5rem;">Welcome back, <span id="welcomeName">Student</span>!</h2>
+                            <p style="color: rgba(255,255,255,0.85);">Here's an overview of your academic progress and upcoming activities.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Grid -->
+                    <div class="portal-grid">
+                        <div class="portal-stat" data-testid="stat-average">
+                            <div class="portal-stat-icon" style="background: rgba(27, 94, 32, 0.1); color: var(--green-primary);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 id="averageMark">--</h3>
+                            <p>Average Mark</p>
+                        </div>
+                        <div class="portal-stat" data-testid="stat-homework">
+                            <div class="portal-stat-icon" style="background: rgba(212, 160, 18, 0.1); color: var(--gold-primary);">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3 id="pendingHomework">0</h3>
+                            <p>Pending Homework</p>
+                        </div>
+                        <div class="portal-stat" data-testid="stat-attendance">
+                            <div class="portal-stat-icon" style="background: rgba(198, 40, 40, 0.1); color: var(--red-primary);">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3 id="attendanceRate">95%</h3>
+                            <p>Attendance</p>
+                        </div>
+                        <div class="portal-stat" data-testid="stat-events">
+                            <div class="portal-stat-icon" style="background: rgba(13, 51, 17, 0.1); color: var(--green-dark);">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3 id="upcomingEvents">0</h3>
+                            <p>Upcoming Events</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Two Column Layout -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <!-- Recent Marks -->
+                        <div class="portal-card" data-testid="recent-marks-card">
+                            <div class="portal-card-header">
+                                <h2>Recent Marks</h2>
+                                <a href="#" onclick="showSection('marks'); return false;" style="font-size: 0.875rem; color: var(--green-primary);">View All</a>
+                            </div>
+                            <div class="portal-card-body" id="recentMarks">
+                                <p style="color: var(--gray-500); text-align: center; padding: 2rem 0;">Loading marks...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Upcoming Homework -->
+                        <div class="portal-card" data-testid="homework-card">
+                            <div class="portal-card-header">
+                                <h2>Upcoming Homework</h2>
+                                <a href="#" onclick="showSection('homework'); return false;" style="font-size: 0.875rem; color: var(--green-primary);">View All</a>
+                            </div>
+                            <div class="portal-card-body" id="upcomingHomeworkList">
+                                <p style="color: var(--gray-500); text-align: center; padding: 2rem 0;">Loading homework...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- School Announcements -->
+                    <div class="portal-card" style="margin-top: 1.5rem;" data-testid="announcements-card">
+                        <div class="portal-card-header">
+                            <h2>School Announcements</h2>
+                        </div>
+                        <div class="portal-card-body" id="announcementsList">
+                            <div style="display: flex; gap: 1rem; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; background: var(--gold-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">2026 Registration Now Open</h4>
+                                    <p style="font-size: 0.875rem; color: var(--gray-600);">Early bird registration for the 2026 academic year is now open. Contact the admissions office for more information.</p>
+                                    <span style="font-size: 0.75rem; color: var(--gray-500);">December 15, 2025</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-md);">
+                                <div style="width: 48px; height: 48px; background: var(--green-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Congratulations to Our Matrics!</h4>
+                                    <p style="font-size: 0.875rem; color: var(--gray-600);">The Class of 2025 achieved an outstanding 96% pass rate. Well done to all our students and teachers!</p>
+                                    <span style="font-size: 0.75rem; color: var(--gray-500);">December 14, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marks Section -->
+                <div class="portal-section" id="section-marks">
+                    <div class="portal-card">
+                        <div class="portal-card-header">
+                            <h2>My Academic Marks</h2>
+                            <select id="termFilter" class="form-select" style="width: auto; padding: 0.5rem 1rem;">
+                                <option value="all">All Terms</option>
+                                <option value="Term 1">Term 1</option>
+                                <option value="Term 2">Term 2</option>
+                                <option value="Term 3">Term 3</option>
+                                <option value="Term 4">Term 4</option>
+                            </select>
+                        </div>
+                        <div class="portal-card-body">
+                            <div style="overflow-x: auto;">
+                                <table class="marks-table" id="marksTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Term</th>
+                                            <th>Mark</th>
+                                            <th>Percentage</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="marksTableBody">
+                                        <tr>
+                                            <td colspan="5" style="text-align: center; padding: 2rem; color: var(--gray-500);">Loading marks...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-md);">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: 600;">Overall Average:</span>
+                                    <span id="overallAverage" style="font-size: 1.5rem; font-weight: 700; color: var(--green-primary);">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Homework Section -->
+                <div class="portal-section" id="section-homework">
+                    <div class="portal-card">
+                        <div class="portal-card-header">
+                            <h2>Homework Assignments</h2>
+                            <span id="homeworkCount" style="background: var(--gold-primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">0 pending</span>
+                        </div>
+                        <div class="portal-card-body" id="homeworkList">
+                            <p style="color: var(--gray-500); text-align: center; padding: 2rem 0;">Loading homework...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timetable Section -->
+                <div class="portal-section" id="section-timetable">
+                    <div class="portal-card">
+                        <div class="portal-card-header">
+                            <h2>Weekly Timetable</h2>
+                            <span id="currentDay" style="color: var(--gray-500);"></span>
+                        </div>
+                        <div class="portal-card-body">
+                            <div style="overflow-x: auto;">
+                                <table class="timetable" id="timetableTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Monday</th>
+                                            <th>Tuesday</th>
+                                            <th>Wednesday</th>
+                                            <th>Thursday</th>
+                                            <th>Friday</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="timetableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sick Leave Section -->
+                <div class="portal-section" id="section-sick-leave">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <!-- Submit Form -->
+                        <div class="portal-card">
+                            <div class="portal-card-header">
+                                <h2>Submit Sick Leave</h2>
+                            </div>
+                            <div class="portal-card-body">
+                                <form id="sickLeaveForm">
+                                    <div class="form-group">
+                                        <label class="form-label">Start Date</label>
+                                        <input type="date" id="sickStartDate" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">End Date</label>
+                                        <input type="date" id="sickEndDate" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Reason</label>
+                                        <textarea id="sickReason" class="form-textarea" rows="3" placeholder="Please describe your illness or reason for absence..." required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Doctor's Note (Optional)</label>
+                                        <input type="text" id="doctorNote" class="form-input" placeholder="Reference number or details">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                        <i class="fas fa-paper-plane"></i> Submit Request
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- History -->
+                        <div class="portal-card">
+                            <div class="portal-card-header">
+                                <h2>Leave History</h2>
+                            </div>
+                            <div class="portal-card-body" id="sickLeaveHistory">
+                                <p style="color: var(--gray-500); text-align: center; padding: 2rem 0;">No sick leave records found.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events Section -->
+                <div class="portal-section" id="section-events">
+                    <div class="portal-card">
+                        <div class="portal-card-header">
+                            <h2>Upcoming Events</h2>
+                        </div>
+                        <div class="portal-card-body" id="eventsList">
+                            <p style="color: var(--gray-500); text-align: center; padding: 2rem 0;">Loading events...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Section -->
+                <div class="portal-section" id="section-profile">
+                    <div class="portal-card">
+                        <div class="portal-card-header">
+                            <h2>My Profile</h2>
+                            <button class="btn btn-outline" onclick="openEditProfileModal()">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </button>
+                        </div>
+                        <div class="portal-card-body">
+                            <div class="profile-section">
+                                <div class="profile-avatar-large" id="profileAvatar">S</div>
+                                <div class="profile-details">
+                                    <h3 id="profileName" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Student Name</h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 1.5rem;" id="profileGrade">Grade --</p>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                        <div>
+                                            <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Email</span>
+                                            <p id="profileEmail" style="font-weight: 500;">student@email.com</p>
+                                        </div>
+                                        <div>
+                                            <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Student ID</span>
+                                            <p id="profileId" style="font-weight: 500;">--</p>
+                                        </div>
+                                        <div>
+                                            <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Joined</span>
+                                            <p id="profileJoined" style="font-weight: 500;">--</p>
+                                        </div>
+                                        <div>
+                                            <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Status</span>
+                                            <p style="font-weight: 500; color: var(--green-primary);">Active</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-top: 1.5rem;">
+                                        <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Bio</span>
+                                        <p id="profileBio" style="color: var(--gray-600); margin-top: 0.25rem;">No bio added yet.</p>
+                                    </div>
+                                    
+                                    <div style="margin-top: 1.5rem;">
+                                        <span style="font-size: 0.8rem; color: var(--gray-500); text-transform: uppercase;">Interests</span>
+                                        <div id="profileInterests" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                                            <span style="padding: 0.25rem 0.75rem; background: var(--gray-100); border-radius: var(--radius-full); font-size: 0.8rem; color: var(--gray-600);">No interests added</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="modal-close" onclick="closeEditProfileModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label class="form-label">Bio</label>
+                        <textarea id="editBio" class="form-textarea" rows="3" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Interests (comma separated)</label>
+                        <input type="text" id="editInterests" class="form-input" placeholder="Sports, Music, Science...">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Save Changes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Homework Detail Modal -->
+    <div class="modal-overlay" id="homeworkModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="homeworkModalTitle">Homework Details</h3>
+                <button class="modal-close" onclick="closeHomeworkModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="homeworkModalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if logged in
+        let student = JSON.parse(localStorage.getItem('student'));
+        if (!student) {
+            window.location.href = 'login.html';
+        }
+        
+        // Sample data for demo
+        const sampleMarks = [
+            { subject: 'Mathematics', term: 'Term 1', marks: 78, total_marks: 100 },
+            { subject: 'English', term: 'Term 1', marks: 85, total_marks: 100 },
+            { subject: 'Physical Sciences', term: 'Term 1', marks: 72, total_marks: 100 },
+            { subject: 'Life Sciences', term: 'Term 1', marks: 88, total_marks: 100 },
+            { subject: 'History', term: 'Term 1', marks: 65, total_marks: 100 },
+            { subject: 'Geography', term: 'Term 1', marks: 70, total_marks: 100 },
+            { subject: 'Mathematics', term: 'Term 2', marks: 82, total_marks: 100 },
+            { subject: 'English', term: 'Term 2', marks: 79, total_marks: 100 },
+            { subject: 'Physical Sciences', term: 'Term 2', marks: 75, total_marks: 100 },
+        ];
+        
+        const sampleHomework = [
+            { id: '1', title: 'Algebra Practice Set', subject: 'Mathematics', description: 'Complete exercises 1-20 from Chapter 5 on quadratic equations.', due_date: '2025-12-20', grade: student?.grade || '10' },
+            { id: '2', title: 'Essay: Climate Change', subject: 'English', description: 'Write a 500-word argumentative essay on climate change solutions.', due_date: '2025-12-22', grade: student?.grade || '10' },
+            { id: '3', title: 'Lab Report', subject: 'Physical Sciences', description: 'Complete the lab report for the density experiment conducted in class.', due_date: '2025-12-18', grade: student?.grade || '10' },
+            { id: '4', title: 'History Research', subject: 'History', description: 'Research and prepare notes on the causes of World War I.', due_date: '2025-12-25', grade: student?.grade || '10' },
+        ];
+        
+        const sampleEvents = [
+            { title: 'School Reopens', date: '2026-01-15', time: '08:00', location: 'School Campus', description: 'First day of the 2026 academic year. All students must report by 8:00 AM.' },
+            { title: 'Parent Meeting', date: '2026-01-20', time: '18:00', location: 'School Hall', description: 'Parents of new students are invited to meet teachers and staff.' },
+            { title: 'Sports Day', date: '2026-01-28', time: '09:00', location: 'Sports Fields', description: 'Annual inter-house sports competition.' },
+            { title: 'Science Fair', date: '2026-02-10', time: '10:00', location: 'Science Block', description: 'Students showcase their science projects.' },
+        ];
+        
+        const timetableData = {
+            '07:30': { mon: 'Assembly', tue: 'Assembly', wed: 'Assembly', thu: 'Assembly', fri: 'Assembly' },
+            '08:00': { mon: 'Mathematics', tue: 'English', wed: 'Life Sciences', thu: 'Mathematics', fri: 'Physical Sciences' },
+            '08:45': { mon: 'Mathematics', tue: 'English', wed: 'Life Sciences', thu: 'Mathematics', fri: 'Physical Sciences' },
+            '09:30': { break: true },
+            '10:00': { mon: 'English', tue: 'Physical Sciences', wed: 'Mathematics', thu: 'History', fri: 'English' },
+            '10:45': { mon: 'English', tue: 'Physical Sciences', wed: 'Mathematics', thu: 'History', fri: 'English' },
+            '11:30': { mon: 'Life Sciences', tue: 'Geography', wed: 'History', thu: 'English', fri: 'Life Orientation' },
+            '12:15': { break: true, label: 'Lunch' },
+            '13:00': { mon: 'Physical Sciences', tue: 'Life Sciences', wed: 'Geography', thu: 'Life Sciences', fri: 'Mathematics' },
+            '13:45': { mon: 'History', tue: 'Life Orientation', wed: 'English', thu: 'Geography', fri: 'Sports' },
+        };
+        
+        // Initialize UI with student info
+        function initializeUI() {
+            if (student) {
+                document.getElementById('studentName').textContent = student.name;
+                document.getElementById('studentGrade').textContent = 'Grade ' + student.grade;
+                document.getElementById('studentAvatar').textContent = student.name.charAt(0).toUpperCase();
+                document.getElementById('welcomeName').textContent = student.name.split(' ')[0];
+                
+                // Profile
+                document.getElementById('profileName').textContent = student.name;
+                document.getElementById('profileGrade').textContent = 'Grade ' + student.grade;
+                document.getElementById('profileEmail').textContent = student.email;
+                document.getElementById('profileId').textContent = student.id.substring(0, 8).toUpperCase();
+                document.getElementById('profileAvatar').textContent = student.name.charAt(0).toUpperCase();
+                document.getElementById('profileBio').textContent = student.bio || 'No bio added yet.';
+                
+                if (student.interests && student.interests.length > 0) {
+                    document.getElementById('profileInterests').innerHTML = student.interests.map(i => 
+                        `<span style=\"padding: 0.25rem 0.75rem; background: var(--green-primary); color: white; border-radius: var(--radius-full); font-size: 0.8rem;\">${i}</span>`
+                    ).join('');
+                }
+            }
+        }
+        
+        // Section navigation
+        function showSection(sectionName) {
+            // Update nav
+            document.querySelectorAll('.portal-nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.section === sectionName) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Update sections
+            document.querySelectorAll('.portal-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('section-' + sectionName).classList.add('active');
+            
+            // Update title
+            const titles = {
+                'dashboard': 'Dashboard',
+                'marks': 'My Marks',
+                'homework': 'Homework',
+                'timetable': 'Timetable',
+                'sick-leave': 'Sick Leave',
+                'events': 'Events',
+                'profile': 'My Profile'
+            };
+            document.getElementById('pageTitle').textContent = titles[sectionName] || 'Dashboard';
+            
+            // Close mobile menu
+            document.getElementById('portalSidebar').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+        }
+        
+        // Navigation clicks
+        document.querySelectorAll('.portal-nav-item[data-section]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(this.dataset.section);
+            });
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('portalSidebar').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+        });
+        
+        document.getElementById('mobileOverlay').addEventListener('click', function() {
+            document.getElementById('portalSidebar').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+        });
+        
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('student');
+            window.location.href = 'login.html';
+        });
+        
+        // Open chatbot from nav
+        document.getElementById('openChatbot').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('chatbotContainer').classList.add('active');
+        });
+        
+        // Load marks
+        function loadMarks() {
+            // Calculate average
+            const average = sampleMarks.reduce((acc, m) => acc + (m.marks / m.total_marks * 100), 0) / sampleMarks.length;
+            document.getElementById('averageMark').textContent = average.toFixed(0) + '%';
+            document.getElementById('overallAverage').textContent = average.toFixed(1) + '%';
+            
+            // Dashboard recent marks
+            const recentMarksHTML = sampleMarks.slice(0, 4).map(m => {
+                const pct = (m.marks / m.total_marks * 100);
+                return `
+                    <div style=\"display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100);\">
+                        <div>
+                            <div style=\"font-weight: 500;\">${m.subject}</div>
+                            <div style=\"font-size: 0.8rem; color: var(--gray-500);\">${m.term}</div>
+                        </div>
+                        <div style=\"font-weight: 600; color: ${pct >= 50 ? 'var(--green-primary)' : 'var(--red-primary)'};\">
+                            ${m.marks}/${m.total_marks}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            document.getElementById('recentMarks').innerHTML = recentMarksHTML;
+            
+            // Full marks table
+            renderMarksTable(sampleMarks);
+        }
+        
+        function renderMarksTable(marks) {
+            const tbody = document.getElementById('marksTableBody');
+            tbody.innerHTML = marks.map(m => {
+                const pct = (m.marks / m.total_marks * 100);
+                let status = 'pass';
+                let statusText = 'Pass';
+                if (pct < 50) { status = 'fail'; statusText = 'Fail'; }
+                else if (pct >= 75) { status = 'distinction'; statusText = 'Distinction'; }
+                
+                return `
+                    <tr>
+                        <td><strong>${m.subject}</strong></td>
+                        <td>${m.term}</td>
+                        <td>${m.marks}/${m.total_marks}</td>
+                        <td>${pct.toFixed(0)}%</td>
+                        <td><span class=\"mark-badge ${status}\">${statusText}</span></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        // Term filter
+        document.getElementById('termFilter').addEventListener('change', function() {
+            const term = this.value;
+            const filtered = term === 'all' ? sampleMarks : sampleMarks.filter(m => m.term === term);
+            renderMarksTable(filtered);
+        });
+        
+        // Load homework
+        function loadHomework() {
+            document.getElementById('pendingHomework').textContent = sampleHomework.length;
+            document.getElementById('homeworkCount').textContent = sampleHomework.length + ' pending';
+            
+            // Dashboard homework
+            const dashboardHTML = sampleHomework.slice(0, 3).map(hw => `
+                <div style=\"display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100);\">
+                    <div>
+                        <div style=\"font-weight: 500;\">${hw.title}</div>
+                        <div style=\"font-size: 0.8rem; color: var(--gray-500);\">${hw.subject}</div>
+                    </div>
+                    <div style=\"font-size: 0.8rem; color: var(--red-primary);\">
+                        Due: ${formatDate(hw.due_date)}
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('upcomingHomeworkList').innerHTML = dashboardHTML;
+            
+            // Full homework list
+            const isUrgent = (date) => {
+                const due = new Date(date);
+                const now = new Date();
+                const diff = (due - now) / (1000 * 60 * 60 * 24);
+                return diff <= 3;
+            };
+            
+            const fullHTML = sampleHomework.map(hw => `
+                <div class=\"homework-card ${isUrgent(hw.due_date) ? 'urgent' : ''}\" onclick=\"openHomeworkModal('${hw.id}')\" style=\"cursor: pointer;\">
+                    <h4>${hw.title}</h4>
+                    <p>${hw.description}</p>
+                    <div class=\"homework-meta\">
+                        <span><i class=\"fas fa-book\"></i> ${hw.subject}</span>
+                        <span style=\"color: ${isUrgent(hw.due_date) ? 'var(--red-primary)' : 'inherit'};\">
+                            <i class=\"fas fa-clock\"></i> Due: ${formatDate(hw.due_date)}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('homeworkList').innerHTML = fullHTML;
+        }
+        
+        function openHomeworkModal(id) {
+            const hw = sampleHomework.find(h => h.id === id);
+            if (!hw) return;
+            
+            document.getElementById('homeworkModalTitle').textContent = hw.title;
+            document.getElementById('homeworkModalBody').innerHTML = `
+                <div style=\"margin-bottom: 1rem;\">
+                    <span style=\"display: inline-block; padding: 0.25rem 0.75rem; background: var(--green-primary); color: white; border-radius: var(--radius-full); font-size: 0.8rem;\">${hw.subject}</span>
+                </div>
+                <p style=\"color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.7;\">${hw.description}</p>
+                <div style=\"display: flex; justify-content: space-between; padding: 1rem; background: var(--gray-50); border-radius: var(--radius-md);\">
+                    <div>
+                        <span style=\"font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase;\">Due Date</span>
+                        <p style=\"font-weight: 600; color: var(--red-primary);\">${formatDate(hw.due_date)}</p>
+                    </div>
+                    <div>
+                        <span style=\"font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase;\">Grade</span>
+                        <p style=\"font-weight: 600;\">Grade ${hw.grade}</p>
+                    </div>
+                </div>
+                <button class=\"btn btn-primary\" style=\"width: 100%; margin-top: 1.5rem;\" onclick=\"markAsComplete('${hw.id}')\">
+                    <i class=\"fas fa-check\"></i> Mark as Complete
+                </button>
+            `;
+            document.getElementById('homeworkModal').classList.add('active');
+        }
+        
+        function closeHomeworkModal() {
+            document.getElementById('homeworkModal').classList.remove('active');
+        }
+        
+        function markAsComplete(id) {
+            showNotification('Homework marked as complete!', 'success');
+            closeHomeworkModal();
+        }
+        
+        // Load timetable
+        function loadTimetable() {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('currentDay').textContent = days[new Date().getDay()];
+            
+            let html = '';
+            for (const [time, slots] of Object.entries(timetableData)) {
+                if (slots.break) {
+                    html += `
+                        <tr class=\"break-row\">
+                            <td class=\"time-slot\">${time}</td>
+                            <td colspan=\"5\">${slots.label || 'Break'}</td>
+                        </tr>
+                    `;
+                } else {
+                    html += `
+                        <tr>
+                            <td class=\"time-slot\">${time}</td>
+                            <td><div class=\"subject\">${slots.mon}</div></td>
+                            <td><div class=\"subject\">${slots.tue}</div></td>
+                            <td><div class=\"subject\">${slots.wed}</div></td>
+                            <td><div class=\"subject\">${slots.thu}</div></td>
+                            <td><div class=\"subject\">${slots.fri}</div></td>
+                        </tr>
+                    `;
+                }
+            }
+            document.getElementById('timetableBody').innerHTML = html;
+        }
+        
+        // Load events
+        function loadEvents() {
+            document.getElementById('upcomingEvents').textContent = sampleEvents.length;
+            
+            const html = sampleEvents.map(event => {
+                const date = new Date(event.date);
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                
+                return `
+                    <div class=\"event-card\">
+                        <div class=\"event-date\">
+                            <div class=\"day\">${date.getDate()}</div>
+                            <div class=\"month\">${months[date.getMonth()]}</div>
+                        </div>
+                        <div class=\"event-info\">
+                            <h4>${event.title}</h4>
+                            <p>${event.description}</p>
+                            <div class=\"event-meta\">
+                                <i class=\"fas fa-clock\"></i> ${event.time} &nbsp;|&nbsp;
+                                <i class=\"fas fa-map-marker-alt\"></i> ${event.location}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            document.getElementById('eventsList').innerHTML = html;
+        }
+        
+        // Load sick leave history
+        async function loadSickLeaveHistory() {
+            if (!student) return;
+            
+            try {
+                const response = await fetch(`/api/sick-leave/${student.id}`);
+                if (response.ok) {
+                    const leaves = await response.json();
+                    if (leaves.length > 0) {
+                        const html = leaves.map(leave => `
+                            <div class=\"sick-leave-card\">
+                                <div>
+                                    <div style=\"font-weight: 500;\">${leave.reason}</div>
+                                    <div style=\"font-size: 0.85rem; color: var(--gray-500);\">${leave.start_date} to ${leave.end_date}</div>
+                                </div>
+                                <span class=\"status ${leave.status}\">${leave.status.charAt(0).toUpperCase() + leave.status.slice(1)}</span>
+                            </div>
+                        `).join('');
+                        document.getElementById('sickLeaveHistory').innerHTML = html;
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading sick leave:', error);
+            }
+        }
+        
+        // Submit sick leave
+        document.getElementById('sickLeaveForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const data = {
+                student_id: student.id,
+                start_date: document.getElementById('sickStartDate').value,
+                end_date: document.getElementById('sickEndDate').value,
+                reason: document.getElementById('sickReason').value,
+                doctor_note: document.getElementById('doctorNote').value || null
+            };
+            
+            try {
+                const response = await fetch('/api/sick-leave', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    showNotification('Sick leave request submitted successfully!', 'success');
+                    this.reset();
+                    loadSickLeaveHistory();
+                } else {
+                    showNotification('Failed to submit request. Please try again.', 'error');
+                }
+            } catch (error) {
+                showNotification('Error connecting to server.', 'error');
+            }
+        });
+        
+        // Profile editing
+        function openEditProfileModal() {
+            document.getElementById('editBio').value = student.bio || '';
+            document.getElementById('editInterests').value = (student.interests || []).join(', ');
+            document.getElementById('editProfileModal').classList.add('active');
+        }
+        
+        function closeEditProfileModal() {
+            document.getElementById('editProfileModal').classList.remove('active');
+        }
+        
+        document.getElementById('editProfileForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const bio = document.getElementById('editBio').value;
+            const interests = document.getElementById('editInterests').value.split(',').map(i => i.trim()).filter(i => i);
+            
+            try {
+                // Build URL with query params
+                let url = `/api/students/${student.id}?bio=${encodeURIComponent(bio)}`;
+                interests.forEach(interest => {
+                    url += `&interests=${encodeURIComponent(interest)}`;
+                });
+                
+                const response = await fetch(url, {
+                    method: 'PUT'
+                });
+                
+                if (response.ok) {
+                    student.bio = bio;
+                    student.interests = interests;
+                    localStorage.setItem('student', JSON.stringify(student));
+                    
+                    document.getElementById('profileBio').textContent = bio || 'No bio added yet.';
+                    if (interests.length > 0) {
+                        document.getElementById('profileInterests').innerHTML = interests.map(i => 
+                            `<span style=\"padding: 0.25rem 0.75rem; background: var(--green-primary); color: white; border-radius: var(--radius-full); font-size: 0.8rem;\">${i}</span>`
+                        ).join('');
+                    }
+                    
+                    showNotification('Profile updated successfully!', 'success');
+                    closeEditProfileModal();
+                }
+            } catch (error) {
+                showNotification('Error updating profile.', 'error');
+            }
+        });
+        
+        // Close modals on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+        
+        // Utility functions
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-ZA', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+        
+        // Initialize
+        initializeUI();
+        loadMarks();
+        loadHomework();
+        loadTimetable();
+        loadEvents();
+        loadSickLeaveHistory();
+    </script>
+</body>
+</html>

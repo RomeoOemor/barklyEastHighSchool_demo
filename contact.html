@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="sports.html" class="nav-link">Sports</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="contact-page-title">Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="content-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem;">
+                <!-- Contact Information -->
+                <div>
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--gray-900);">Get in Touch</h2>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.8;">
+                        Have questions about admissions, academics, or anything else? We're here to help. Reach out to us through any of the channels below.
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="card" data-testid="contact-address" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; background: var(--green-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Address</h4>
+                                <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.6;">123 School Street<br>Barkly East, 9786<br>Eastern Cape, South Africa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card" data-testid="contact-phone" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; background: var(--gold-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Phone</h4>
+                                <p style="color: var(--gray-600); font-size: 0.9rem;">
+                                    Main: <a href="tel:+27459710001" style="color: var(--green-primary);">+27 45 971 0001</a><br>
+                                    Admissions: <a href="tel:+27459710002" style="color: var(--green-primary);">+27 45 971 0002</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="card" data-testid="contact-email" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; background: var(--red-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Email</h4>
+                                <p style="color: var(--gray-600); font-size: 0.9rem;">
+                                    General: <a href="mailto:info@barklyeasthigh.edu.za" style="color: var(--green-primary);">info@barklyeasthigh.edu.za</a><br>
+                                    Admissions: <a href="mailto:admissions@barklyeasthigh.edu.za" style="color: var(--green-primary);">admissions@barklyeasthigh.edu.za</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="card" data-testid="contact-hours" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; background: var(--green-dark); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Office Hours</h4>
+                                <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.6;">
+                                    Monday - Friday: 7:30 AM - 4:00 PM<br>
+                                    Saturday: 8:00 AM - 12:00 PM<br>
+                                    Sunday & Holidays: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <div class="card" style="padding: 2rem;">
+                        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--gray-900);">Send Us a Message</h2>
+                        <form id="contactForm" data-testid="contact-form">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactName">Full Name *</label>
+                                    <input type="text" id="contactName" class="form-input" required data-testid="contact-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactEmail">Email Address *</label>
+                                    <input type="email" id="contactEmail" class="form-input" required data-testid="contact-email-input">
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactPhone">Phone Number</label>
+                                    <input type="tel" id="contactPhone" class="form-input" placeholder="+27 XX XXX XXXX" data-testid="contact-phone-input">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactSubject">Subject *</label>
+                                    <select id="contactSubject" class="form-select" required data-testid="contact-subject">
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="admissions">Admissions</option>
+                                        <option value="academics">Academics</option>
+                                        <option value="sports">Sports Programs</option>
+                                        <option value="fees">Fees & Payments</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" class="form-textarea" rows="6" required placeholder="How can we help you?" data-testid="contact-message"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-testid="contact-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find Us</h2>
+                <p class="section-subtitle">Located in the heart of Barkly East</p>
+            </div>
+            
+            <div class="card" style="padding: 0; overflow: hidden; height: 400px;">
+                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--gray-200), var(--gray-300)); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--gray-400);"></i>
+                    <p style="color: var(--gray-600); text-align: center;">
+                        <strong>Barkly East High School</strong><br>
+                        123 School Street, Barkly East<br>
+                        Eastern Cape, South Africa
+                    </p>
+                    <a href="https://maps.google.com/?q=Barkly+East+Eastern+Cape+South+Africa" target="_blank" class="btn btn-outline" data-testid="open-maps-btn">
+                        <i class="fas fa-external-link-alt"></i> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Department Contacts</h2>
+                <p class="section-subtitle">Reach the right person directly</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div class="card text-center" data-testid="dept-principal">
+                    <div style="width: 60px; height: 60px; background: var(--green-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Principal's Office</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Mr. Johannes van der Berg</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:principal@barklyeasthigh.edu.za" style="color: var(--green-primary);">principal@barklyeasthigh.edu.za</a></p>
+                </div>
+                
+                <div class="card text-center" data-testid="dept-admissions">
+                    <div style="width: 60px; height: 60px; background: var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Admissions Office</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Mrs. Sarah Botha</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:admissions@barklyeasthigh.edu.za" style="color: var(--green-primary);">admissions@barklyeasthigh.edu.za</a></p>
+                </div>
+                
+                <div class="card text-center" data-testid="dept-academics">
+                    <div style="width: 60px; height: 60px; background: var(--red-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Academic Affairs</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Mr. David Mokoena</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:academics@barklyeasthigh.edu.za" style="color: var(--green-primary);">academics@barklyeasthigh.edu.za</a></p>
+                </div>
+                
+                <div class="card text-center" data-testid="dept-sports">
+                    <div style="width: 60px; height: 60px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sports Department</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Mr. Peter Jacobs</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:sports@barklyeasthigh.edu.za" style="color: var(--green-primary);">sports@barklyeasthigh.edu.za</a></p>
+                </div>
+                
+                <div class="card text-center" data-testid="dept-finance">
+                    <div style="width: 60px; height: 60px; background: var(--gold-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Finance Office</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Mrs. Linda Mthembu</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:finance@barklyeasthigh.edu.za" style="color: var(--green-primary);">finance@barklyeasthigh.edu.za</a></p>
+                </div>
+                
+                <div class="card text-center" data-testid="dept-counselor">
+                    <div style="width: 60px; height: 60px; background: var(--red-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Student Counselor</h3>
+                    <p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Ms. Grace Ndlovu</p>
+                    <p style="font-size: 0.875rem;"><a href="mailto:counselor@barklyeasthigh.edu.za" style="color: var(--green-primary);">counselor@barklyeasthigh.edu.za</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parental-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barkly East High School. All rights reserved.</p>
+                <p>Powered by: &copy; <a href="https://romeooemor.github.io/Edu-Tech/">Edu-Tech</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Message sent successfully! We will get back to you soon.', 'success');
+            this.reset();
+        });
+    </script>
+    <style>
+        @media (max-width: 968px) {
+            [style*="grid-template-columns: 1fr 1.5fr"] { grid-template-columns: 1fr !important; }
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 576px) {
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>

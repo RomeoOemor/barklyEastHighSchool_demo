@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link active">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="sports.html" class="nav-link">Sports</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="academics-page-title">Academics</h1>
+            <p>Excellence in education through comprehensive curriculum</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Programs</h2>
+                <p class="section-subtitle">Preparing students for success through quality education</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem;">
+                    At Barkly East High School, we offer a comprehensive curriculum that meets the standards set by the Department of Basic Education. Our academic programs are designed to challenge students, foster critical thinking, and prepare them for higher education and career success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Subjects Offered</h2>
+                <p class="section-subtitle">A diverse range of subjects for holistic development</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Languages -->
+                <div class="card" data-testid="subject-languages">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--green-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 style="margin: 0;">Languages</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 0.5rem;"></i> English Home Language</li>
+                        <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 0.5rem;"></i> Afrikaans First Additional</li>
+                        <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 0.5rem;"></i> IsiXhosa Home Language</li>
+                        <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 0.5rem;"></i> Sesotho First Additional</li>
+                    </ul>
+                </div>
+
+                <!-- Sciences -->
+                <div class="card" data-testid="subject-sciences">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--gold-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 style="margin: 0;">Sciences</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> Mathematics</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> Mathematical Literacy</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> Physical Sciences</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> Life Sciences</li>
+                    </ul>
+                </div>
+
+                <!-- Commerce -->
+                <div class="card" data-testid="subject-commerce">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--red-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 style="margin: 0;">Commerce</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--red-primary); margin-right: 0.5rem;"></i> Accounting</li>
+                        <li><i class="fas fa-check" style="color: var(--red-primary); margin-right: 0.5rem;"></i> Business Studies</li>
+                        <li><i class="fas fa-check" style="color: var(--red-primary); margin-right: 0.5rem;"></i> Economics</li>
+                        <li><i class="fas fa-check" style="color: var(--red-primary); margin-right: 0.5rem;"></i> Consumer Studies</li>
+                    </ul>
+                </div>
+
+                <!-- Humanities -->
+                <div class="card" data-testid="subject-humanities">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--green-dark); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 style="margin: 0;">Humanities</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--green-dark); margin-right: 0.5rem;"></i> History</li>
+                        <li><i class="fas fa-check" style="color: var(--green-dark); margin-right: 0.5rem;"></i> Geography</li>
+                        <li><i class="fas fa-check" style="color: var(--green-dark); margin-right: 0.5rem;"></i> Life Orientation</li>
+                        <li><i class="fas fa-check" style="color: var(--green-dark); margin-right: 0.5rem;"></i> Religious Studies</li>
+                    </ul>
+                </div>
+
+                <!-- Technology -->
+                <div class="card" data-testid="subject-technology">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--gold-dark); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 style="margin: 0;">Technology</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> Information Technology</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> Computer Applications</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> Engineering Graphics</li>
+                        <li><i class="fas fa-check" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> Technical Sciences</li>
+                    </ul>
+                </div>
+
+                <!-- Arts -->
+                <div class="card" data-testid="subject-arts">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: var(--red-dark); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 style="margin: 0;">Arts & Culture</h3>
+                    </div>
+                    <ul style="color: var(--gray-600); line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--red-dark); margin-right: 0.5rem;"></i> Visual Arts</li>
+                        <li><i class="fas fa-check" style="color: var(--red-dark); margin-right: 0.5rem;"></i> Music</li>
+                        <li><i class="fas fa-check" style="color: var(--red-dark); margin-right: 0.5rem;"></i> Dramatic Arts</li>
+                        <li><i class="fas fa-check" style="color: var(--red-dark); margin-right: 0.5rem;"></i> Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Results -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Excellence</h2>
+                <p class="section-subtitle">Our track record of success</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="card text-center" data-testid="result-passrate">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--green-primary); font-family: var(--font-heading);">96%</div>
+                    <p style="color: var(--gray-600);">2024 Pass Rate</p>
+                </div>
+                <div class="card text-center" data-testid="result-bachelors">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--gold-primary); font-family: var(--font-heading);">72%</div>
+                    <p style="color: var(--gray-600);">Bachelor's Pass</p>
+                </div>
+                <div class="card text-center" data-testid="result-distinctions">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--red-primary); font-family: var(--font-heading);">48</div>
+                    <p style="color: var(--gray-600);">Distinctions</p>
+                </div>
+                <div class="card text-center" data-testid="result-university">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--green-dark); font-family: var(--font-heading);">85%</div>
+                    <p style="color: var(--gray-600);">University Admission</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Support -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Support</h2>
+                <p class="section-subtitle">Resources to help every student succeed</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="card" data-testid="support-tutoring">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-chalkboard-teacher" style="color: var(--green-primary);"></i>
+                        Extra Classes & Tutoring
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        We offer afternoon extra classes in key subjects including Mathematics, Physical Sciences, and Accounting. Peer tutoring programs pair struggling students with high achievers for personalized support.
+                    </p>
+                </div>
+                <div class="card" data-testid="support-library">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-book-reader" style="color: var(--gold-primary);"></i>
+                        Library & Study Center
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Our fully-equipped library provides access to textbooks, reference materials, and computers with internet access. The study center is open until 5 PM for students who need a quiet space to work.
+                    </p>
+                </div>
+                <div class="card" data-testid="support-counseling">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-user-graduate" style="color: var(--red-primary);"></i>
+                        Career Counseling
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Our career counselor helps students explore career options, understand university requirements, and make informed decisions about their future. Regular career days bring professionals to campus.
+                    </p>
+                </div>
+                <div class="card" data-testid="support-labs">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-microscope" style="color: var(--green-dark);"></i>
+                        Modern Laboratories
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        State-of-the-art science and computer laboratories provide hands-on learning experiences. Students conduct experiments and develop practical skills essential for STEM careers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Excel?</h2>
+                <p>Join our academic community and unlock your full potential.</p>
+                <a href="admissions.html" class="btn btn-primary btn-lg" data-testid="academics-apply-btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barkly East High School. All rights reserved.</p>
+                <p>Powered by: &copy; <a href="https://romeooemor.github.io/Edu-Tech/">Edu-Tech</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        @media (max-width: 968px) {
+            [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 576px) {
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>

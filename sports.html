@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="sports.html" class="nav-link active">Sports</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="sports-page-title">Sports & Athletics</h1>
+            <p>Building champions on and off the field</p>
+        </div>
+    </section>
+
+    <!-- Sports Overview -->
+    <section class="content-section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--gray-600); line-height: 1.8; font-size: 1.1rem;">
+                    At Barkly East High School, we believe that sports play a crucial role in developing well-rounded individuals. Our comprehensive sports program offers opportunities for students to excel in athletics while learning valuable life skills such as teamwork, discipline, and perseverance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Programs -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Sports Programs</h2>
+                <p class="section-subtitle">A sport for every student</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Rugby -->
+                <div class="card" data-testid="sport-rugby" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--green-primary), var(--green-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-football-ball"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Rugby</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Our rugby program has produced provincial players and promotes teamwork and physical fitness. Teams: U14, U16, U18, First XV.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--green-light); color: var(--green-dark); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Provincial Champions 2025</span>
+                </div>
+
+                <!-- Netball -->
+                <div class="card" data-testid="sport-netball" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Netball</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Our netball teams compete at regional and provincial levels, emphasizing skill development and sportsmanship. Teams: U14, U16, U18, First Team.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--gold-light); color: var(--gold-dark); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Regional Finalists</span>
+                </div>
+
+                <!-- Athletics -->
+                <div class="card" data-testid="sport-athletics" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--red-primary), var(--red-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Athletics</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Track and field events including sprints, long distance, high jump, long jump, shot put, and more. All grades welcome to participate.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--red-light); color: var(--red-dark); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">5 Provincial Medalists</span>
+                </div>
+
+                <!-- Soccer -->
+                <div class="card" data-testid="sport-soccer" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--green-dark), var(--green-primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Soccer</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Boys and girls soccer teams competing in local and regional leagues. Focus on technical skills, tactics, and fair play.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--gray-200); color: var(--gray-700); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">League Participants</span>
+                </div>
+
+                <!-- Cricket -->
+                <div class="card" data-testid="sport-cricket" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-baseball-ball"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Cricket</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Summer sport offering coaching in batting, bowling, and fielding. Teams participate in inter-school matches and tournaments.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--gray-200); color: var(--gray-700); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Summer Season</span>
+                </div>
+
+                <!-- Swimming -->
+                <div class="card" data-testid="sport-swimming" style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--red-dark), var(--red-primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Swimming</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.7;">Competitive swimming program with training at the community pool. Events include freestyle, backstroke, breaststroke, and butterfly.</p>
+                    <span style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--gray-200); color: var(--gray-700); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Summer Season</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recent Achievements</h2>
+                <p class="section-subtitle">Celebrating our athletes' success</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="card text-center" data-testid="achievement-1">
+                    <div style="font-size: 3rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fas fa-trophy"></i></div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--green-primary);">12</div>
+                    <p style="color: var(--gray-600); font-size: 0.9rem;">Provincial Titles</p>
+                </div>
+                <div class="card text-center" data-testid="achievement-2">
+                    <div style="font-size: 3rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fas fa-medal"></i></div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--green-primary);">45</div>
+                    <p style="color: var(--gray-600); font-size: 0.9rem;">Individual Medals</p>
+                </div>
+                <div class="card text-center" data-testid="achievement-3">
+                    <div style="font-size: 3rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fas fa-star"></i></div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--green-primary);">8</div>
+                    <p style="color: var(--gray-600); font-size: 0.9rem;">National Selections</p>
+                </div>
+                <div class="card text-center" data-testid="achievement-4">
+                    <div style="font-size: 3rem; color: var(--gold-primary); margin-bottom: 0.5rem;"><i class="fas fa-users"></i></div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--green-primary);">350+</div>
+                    <p style="color: var(--gray-600); font-size: 0.9rem;">Active Athletes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Facilities -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Facilities</h2>
+                <p class="section-subtitle">World-class facilities for our athletes</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="card" data-testid="facility-1">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-flag" style="color: var(--green-primary);"></i>
+                        Rugby & Soccer Fields
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Two full-size grass fields with proper markings, goalposts, and seating for spectators. Floodlights available for evening practice.
+                    </p>
+                </div>
+                <div class="card" data-testid="facility-2">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-running" style="color: var(--gold-primary);"></i>
+                        Athletics Track
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        400-meter track with six lanes, plus facilities for field events including long jump pit, high jump area, and shot put circle.
+                    </p>
+                </div>
+                <div class="card" data-testid="facility-3">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-basketball-ball" style="color: var(--red-primary);"></i>
+                        Netball Courts
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Two dedicated netball courts with proper surfacing, goal posts, and lined markings. Adjacent to the main sports pavilion.
+                    </p>
+                </div>
+                <div class="card" data-testid="facility-4">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <i class="fas fa-dumbbell" style="color: var(--green-dark);"></i>
+                        Gymnasium
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Indoor gymnasium with weight training equipment, cardio machines, and space for indoor activities during inclement weather.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join a Team?</h2>
+                <p>Contact our sports department to learn more about tryouts and team registration.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg" data-testid="sports-contact-btn">Contact Sports Department</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barkly East High School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        @media (max-width: 968px) {
+            [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 576px) {
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>

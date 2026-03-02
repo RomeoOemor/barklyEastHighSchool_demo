@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link active">Admissions</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="sports.html" class="nav-link">Sports</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="admissions-page-title">Admissions</h1>
+            <p>Begin your journey with Barkly East High School</p>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admission Process</h2>
+                <p class="section-subtitle">Simple steps to join our school community</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem;">
+                <div class="card text-center" data-testid="step-1">
+                    <div style="width: 60px; height: 60px; background: var(--green-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">1</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Submit Application</h3>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Complete the online application form with all required information</p>
+                </div>
+                <div class="card text-center" data-testid="step-2">
+                    <div style="width: 60px; height: 60px; background: var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">2</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Upload Documents</h3>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Provide required documents including ID and previous reports</p>
+                </div>
+                <div class="card text-center" data-testid="step-3">
+                    <div style="width: 60px; height: 60px; background: var(--red-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">3</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Assessment</h3>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Complete placement assessment and interview if required</p>
+                </div>
+                <div class="card text-center" data-testid="step-4">
+                    <div style="width: 60px; height: 60px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">4</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Enrollment</h3>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Receive acceptance and complete the enrollment process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Application Form</h2>
+                <p class="section-subtitle">Fill out the form below to apply for admission</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <form id="admissionForm" class="card" data-testid="admission-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--green-primary);">
+                        <i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i> Student Information
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-input" required data-testid="input-firstname">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-input" required data-testid="input-lastname">
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label" for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" class="form-input" required data-testid="input-dob">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="gender">Gender *</label>
+                            <select id="gender" class="form-select" required data-testid="select-gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="grade">Grade Applying For *</label>
+                        <select id="grade" class="form-select" required data-testid="select-grade">
+                            <option value="">Select Grade</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                        </select>
+                    </div>
+                    
+                    <h3 style="margin: 2rem 0 1.5rem; color: var(--green-primary);">
+                        <i class="fas fa-users" style="margin-right: 0.5rem;"></i> Parent/Guardian Information
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label" for="parentName">Parent/Guardian Name *</label>
+                            <input type="text" id="parentName" class="form-input" required data-testid="input-parent-name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="relationship">Relationship *</label>
+                            <select id="relationship" class="form-select" required data-testid="select-relationship">
+                                <option value="">Select Relationship</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="guardian">Legal Guardian</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+27 XX XXX XXXX" required data-testid="input-phone">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-input" required data-testid="input-email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="address">Physical Address *</label>
+                        <textarea id="address" class="form-textarea" rows="3" required data-testid="input-address"></textarea>
+                    </div>
+                    
+                    <h3 style="margin: 2rem 0 1.5rem; color: var(--green-primary);">
+                        <i class="fas fa-school" style="margin-right: 0.5rem;"></i> Previous School Information
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="prevSchool">Previous School Name *</label>
+                        <input type="text" id="prevSchool" class="form-input" required data-testid="input-prev-school">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" class="form-textarea" rows="4" placeholder="Any additional information you'd like to share..." data-testid="input-additional"></textarea>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                            <input type="checkbox" id="terms" required style="margin-top: 4px;" data-testid="checkbox-terms">
+                            <span style="font-size: 0.875rem; color: var(--gray-600);">
+                                I confirm that all information provided is accurate and I agree to the school's terms and conditions. I understand that submission of this form does not guarantee admission.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;" data-testid="submit-application-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Required Documents -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Required Documents</h2>
+                <p class="section-subtitle">Please prepare the following documents</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div class="card" data-testid="docs-required">
+                    <h3 style="color: var(--green-primary); margin-bottom: 1rem;">
+                        <i class="fas fa-file-alt" style="margin-right: 0.5rem;"></i> Required Documents
+                    </h3>
+                    <ul style="color: var(--gray-600); line-height: 2.2;">
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Certified copy of birth certificate</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Copy of ID (learner & parent/guardian)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Latest school report card</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Transfer letter from previous school</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Proof of residence</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--green-primary); margin-right: 0.75rem;"></i> Immunization records</li>
+                    </ul>
+                </div>
+                <div class="card" data-testid="docs-optional">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">
+                        <i class="fas fa-file-plus" style="margin-right: 0.5rem;"></i> Optional Documents
+                    </h3>
+                    <ul style="color: var(--gray-600); line-height: 2.2;">
+                        <li><i class="fas fa-circle" style="color: var(--gold-primary); margin-right: 0.75rem; font-size: 0.5rem;"></i> Awards and certificates</li>
+                        <li><i class="fas fa-circle" style="color: var(--gold-primary); margin-right: 0.75rem; font-size: 0.5rem;"></i> Sports achievements</li>
+                        <li><i class="fas fa-circle" style="color: var(--gold-primary); margin-right: 0.75rem; font-size: 0.5rem;"></i> Reference letters</li>
+                        <li><i class="fas fa-circle" style="color: var(--gold-primary); margin-right: 0.75rem; font-size: 0.5rem;"></i> Portfolio (for arts applicants)</li>
+                        <li><i class="fas fa-circle" style="color: var(--gold-primary); margin-right: 0.75rem; font-size: 0.5rem;"></i> Medical records (if applicable)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Fees -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">School Fees 2026</h2>
+                <p class="section-subtitle">Transparent fee structure for planning purposes</p>
+            </div>
+            
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="card">
+                    <div class="table-container">
+                        <table class="data-table" data-testid="fees-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th style="text-align: right;">Amount (ZAR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Application Fee (once-off)</td>
+                                    <td style="text-align: right;">R 350</td>
+                                </tr>
+                                <tr>
+                                    <td>Registration Fee (annual)</td>
+                                    <td style="text-align: right;">R 1,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuition Fee (annual)</td>
+                                    <td style="text-align: right;">R 15,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Stationery & Books (estimated)</td>
+                                    <td style="text-align: right;">R 2,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Sports Levy (annual)</td>
+                                    <td style="text-align: right;">R 800</td>
+                                </tr>
+                                <tr style="background: var(--gray-100); font-weight: 600;">
+                                    <td>Total Annual Fees</td>
+                                    <td style="text-align: right;">R 20,150</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--gray-600);">
+                        <i class="fas fa-info-circle" style="color: var(--gold-primary); margin-right: 0.5rem;"></i>
+                        Payment plans available. Financial assistance may be available for qualifying families. Contact the admissions office for more information.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Questions About Admissions?</h2>
+                <p>Our admissions team is here to help. Contact us for more information.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg" data-testid="contact-admissions-btn">Contact Us</a>
+                    <a href="tel:+27459710001" class="btn btn-secondary btn-lg" data-testid="call-btn">
+                        <i class="fas fa-phone"></i> Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barkly East High School. All rights reserved.</p>
+                <p>Powered by: &copy; <a href="https://romeooemor.github.io/Edu-Tech/">Edu-Tech</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            showNotification('Application submitted successfully! We will contact you soon.', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+    <style>
+        @media (max-width: 968px) {
+            [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 576px) {
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>

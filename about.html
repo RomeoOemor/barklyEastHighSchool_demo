@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Barkly East High School</title>
+    <link rel="icon" type="image/png" href="images/BEHS_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                </div>
+                <span class="logo-text">Barkly East High</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="academics.html" class="nav-link">Academics</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="sports.html" class="nav-link">Sports</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn-login">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-testid="about-page-title">About Our School</h1>
+            <p>A legacy of excellence in education since 1952</p>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="about-intro" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="about-text">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--gray-900);">Our History</h2>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.8;">
+                        Founded in 1952, Barkly East High School has been a cornerstone of education in the Eastern Cape for over seven decades. What began as a small community school has grown into one of the region's most respected educational institutions.
+                    </p>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.8;">
+                        Our school was established with a vision to provide quality education to all students regardless of their background. Through the years, we have maintained our commitment to academic excellence while adapting to the changing needs of our community.
+                    </p>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        Today, we continue to honor our founders' vision by fostering an environment where every student can thrive academically, socially, and personally.
+                    </p>
+                </div>
+                <div class="about-image" style="background: linear-gradient(135deg, var(--green-primary), var(--green-dark)); border-radius: var(--radius-xl); height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-school" style="font-size: 8rem; color: rgba(255,255,255,0.3);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mission & Vision</h2>
+                <p class="section-subtitle">Guiding principles that shape our future</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="card" data-testid="mission-card" style="border-left: 4px solid var(--green-primary);">
+                    <h3 style="color: var(--green-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-bullseye"></i> Our Mission
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        To provide a holistic education that nurtures academic excellence, develops character, and prepares students to become responsible, contributing members of society. We are committed to creating a safe, inclusive environment where every student can discover and develop their unique potential.
+                    </p>
+                </div>
+                <div class="card" data-testid="vision-card" style="border-left: 4px solid var(--gold-primary);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-eye"></i> Our Vision
+                    </h3>
+                    <p style="color: var(--gray-600); line-height: 1.8;">
+                        To be recognized as a leading educational institution that produces well-rounded individuals equipped with the knowledge, skills, and values needed to succeed in an ever-changing world. We envision graduates who are critical thinkers, lifelong learners, and compassionate leaders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">The foundation of everything we do</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <div class="card text-center" data-testid="value-excellence">
+                    <div style="width: 60px; height: 60px; background: var(--green-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Excellence</h4>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Striving for the highest standards in all endeavors</p>
+                </div>
+                <div class="card text-center" data-testid="value-integrity">
+                    <div style="width: 60px; height: 60px; background: var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Integrity</h4>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Acting with honesty and strong moral principles</p>
+                </div>
+                <div class="card text-center" data-testid="value-respect">
+                    <div style="width: 60px; height: 60px; background: var(--red-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Respect</h4>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Valuing diversity and treating all with dignity</p>
+                </div>
+                <div class="card text-center" data-testid="value-community">
+                    <div style="width: 60px; height: 60px; background: var(--green-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem;">Community</h4>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Building strong bonds and supporting one another</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Team</h2>
+                <p class="section-subtitle">Meet the people guiding our school</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="card text-center" data-testid="leader-principal">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--green-primary), var(--green-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2.5rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.25rem;">Mr. Johannes van der Berg</h3>
+                    <p style="color: var(--gold-primary); font-weight: 500; margin-bottom: 0.75rem;">Principal</p>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">25+ years of educational leadership experience, dedicated to student success and community development.</p>
+                </div>
+                <div class="card text-center" data-testid="leader-deputy">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2.5rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.25rem;">Mrs. Thandi Nkosi</h3>
+                    <p style="color: var(--gold-primary); font-weight: 500; margin-bottom: 0.75rem;">Deputy Principal</p>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Passionate educator with expertise in curriculum development and student welfare programs.</p>
+                </div>
+                <div class="card text-center" data-testid="leader-hod">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--red-primary), var(--red-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2.5rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.25rem;">Mr. David Mokoena</h3>
+                    <p style="color: var(--gold-primary); font-weight: 500; margin-bottom: 0.75rem;">Head of Academics</p>
+                    <p style="font-size: 0.875rem; color: var(--gray-600);">Committed to academic excellence with a track record of improving student performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Community</h2>
+                <p>Become part of a school that values excellence, character, and community.</p>
+                <a href="admissions.html" class="btn btn-primary btn-lg" data-testid="about-apply-btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Images/BEHS_logo.png" alt="Barkly East High School Logo">
+                        <span>Barkly East High School</span>
+                    </a>
+                    <p>Excellence in education since 1952. Preparing students for a successful future through quality education and character development.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 School Street, Barkly East, Eastern Cape</li>
+                        <li><i class="fas fa-phone"></i> +27 45 971 0001</li>
+                        <li><i class="fas fa-envelope"></i> info@barklyeasthigh.edu.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barkly East High School. All rights reserved.</p>
+                <p>Powered by: &copy; <a href="https://romeooemor.github.io/Edu-Tech/">Edu-Tech</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget" data-testid="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" data-testid="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">Ask AI</span>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <span>School Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" data-testid="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" data-testid="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your school assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Type your question..." data-testid="chatbot-input">
+                <button id="chatbotSend" class="chatbot-send" data-testid="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .about-intro { grid-template-columns: 1fr !important; }
+            .about-image { height: 250px !important; }
+            [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+            [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</body>
+</html>
